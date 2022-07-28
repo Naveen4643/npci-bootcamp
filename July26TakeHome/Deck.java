@@ -30,23 +30,23 @@ public class Deck {
 	for(int i=0; i<shuffleList.length; i++) {
 		if(i%2==0 ) {
 			String in = shuffleList[i];
-			for(Map.Entry<Integer, Player> element : playerDetails.entrySet()) {
-				if(element.getValue() == null) {
-					host = element.getKey();
+			for(Map.Entry<Integer, Player> data : playerDetails.entrySet()) {
+				if(data.getValue() == null) {
+					host = data.getKey();
 				}
-				else if((in.equals(element.getValue().getChoosenCard()) && element.getValue().getChosenOrientation().equalsIgnoreCase("IN"))) {
-					return element.getKey();
+				else if((in.equals(data.getValue().getChoosenCard()) && data.getValue().getChosenOrientation().equalsIgnoreCase("IN"))) {
+					return data.getKey();
 				}
 			}
 		}
 		else {
 			String out = shuffleList[i];
-			for(Map.Entry<Integer, Player> element : playerDetails.entrySet()) {
-				if(element.getValue() == null) {
-					host = element.getKey();
+			for(Map.Entry<Integer, Player> data : playerDetails.entrySet()) {
+				if(data.getValue() == null) {
+					host = data.getKey();
 				}
-				else if((out.equals(element.getValue().getChoosenCard()) && element.getValue().getChosenOrientation().equalsIgnoreCase("OUT"))) {
-					return element.getKey();
+				else if((out.equals(data.getValue().getChoosenCard()) && data.getValue().getChosenOrientation().equalsIgnoreCase("OUT"))) {
+					return data.getKey();
 				}
 			}
 		}
